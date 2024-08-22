@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&family=Open+Sans:wght@300;400;500;600&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(-45deg, #ffdde4, #f0a3c2, #fff4f8 );
+}
+
+.container {
+    width: 80%;
+    height: 80vh;
+    margin: auto;
+    display: flex;
+    background: rgba(255, 255, 255, 0.7); 
+    backdrop-filter: blur(20px); 
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50px;
+    
+}
+.form-image {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 15px 0px 0px 15px;
+}
+
+.form-image img {
+    width: 50 rem;
+}
+.form {
+    width: 50%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    background-color: #fff;
+    padding: 2rem;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.form-header {
+    margin-bottom: 3rem;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+.form-header h1::after {
+    content: '';
+    display: block;
+    width: 5rem;
+    height: 0.3rem;
+    background-color: #EC3D91;
+    margin: 0 auto;
+    position: absolute;
+    border-radius: 10px;
+}
+/* Define o layout do contêiner dos inputs */
+.input-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem; /* Espaçamento entre os inputs */
+    padding: 1rem 0;
+}
+
+/* Define o layout e tamanho dos inputs e selects */
+.input-box{
+    flex: 1 1 calc(50% - 1rem); /* Ajuste para o número de colunas desejado */
+    box-sizing: border-box;
+}
+
+/* Define o estilo para os inputs e selects */
+.input-box input,
+.input-box select{
+    width: 100%; /* Faz com que o input preencha o contêiner pai */
+    min-width: 0; /* Remove a largura mínima para permitir que os inputs se ajustem ao contêiner */
+    padding: 0.6rem;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 1px 1px 6px #0000001c;
+    box-sizing: border-box;
+}
+
+.input-box input:hover {
+    background-color: #eeeeee75;
+}
+
+.input-box input:focus-visible {
+    outline: 1px solid #EC3D91;
+}
+.input-box label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #000000c0;
+}
+
+.input-box input::placeholder {
+    color: #7c7c7cbe;
+}
+
+.input-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.1rem;
+}
+
+.gender-input label {
+    font-size: 0.81rem;
+    font-weight: 600;
+    color: #000000c0;
+}
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    margin: auto;
+  }
+  .checkbox-container input {
+    margin: 10px;
+  }
+  .checkbox-container a {
+    color: #EC3D91;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .checkbox-container a:hover {
+    text-decoration:underline;
+  }
+  
+  .continue-button button {
+    width: 100%;
+    margin-top: 1rem;
+    border: none;
+    background-color: #EC3D91;
+    padding: 0.62rem;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.continue-button button a {
+    text-decoration: none;
+    font-size: 0.93rem;
+    font-weight: 500;
+    color: #fff;
+}
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+
+.error {
+    color: red;
+    font-size: 0.7rem;
+    margin-top: 1px;
+}
+
+@media screen and (max-width: 1330px) {
+    .form-image {
+        display: none;
+    }
+    .container {
+        width: 60%;
+        height: auto;
+    }
+    .form {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 1064px) {
+    .container {
+        width: 90%;
+        height: auto;
+    }
+    .input-group {
+        flex-direction: column;
+        z-index: 5;
+        padding-right: 5rem;
+        max-height: 10rem;
+        overflow-y: scroll;
+        flex-wrap: nowrap;
+    }
+}
